@@ -3,7 +3,7 @@ package me.theparanker.customcurrency.core.domain.currency;
 import me.theparanker.customcurrency.plugin.command.impl.AdminSubcommand;
 import me.theparanker.customcurrency.plugin.command.impl.BalanceSubcommand;
 import me.theparanker.customcurrency.plugin.command.impl.PaySubcommand;
-import me.theparanker.customcurrency.plugin.command.strucutre.SubcommandExecutor;
+import me.theparanker.customcurrency.plugin.command.strucuture.SubcommandExecutor;
 import org.bukkit.configuration.ConfigurationSection;
 
 import java.util.HashMap;

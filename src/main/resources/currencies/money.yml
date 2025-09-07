@@ -11,12 +11,12 @@ commands:
   command: "money"
   pay:
     enabled: true
-    usage: "&cUsa: /{command} pay <player> <amount>"
+    usage: "&cUsage: /{command} pay <player> <amount>"
     permission: "money.pay"
     description: "Pay another player a specified amount of money."
   balance:
       enabled: true
-      usage: "&cUsa: /{command} balance [player]"
+      usage: "&cUsage: /{command} balance [player]"
       permission: "money.balance"
       description: "Check your balance or another player's balance."
       settings:
@@ -24,7 +24,7 @@ commands:
   admin:
     enabled: true
     permission: "money.admin"
-    usage: "&cUsa: /{command} admin <check|give|giveall|remove|set>"
+    usage: "&cUsage: /{command} admin <check|give|giveall|remove|set>"
 
 messages:
   prefix: "&a&lMONEY &r"

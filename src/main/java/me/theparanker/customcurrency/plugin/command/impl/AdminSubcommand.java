@@ -3,7 +3,7 @@ package me.theparanker.customcurrency.plugin.command.impl;
 import me.theparanker.customcurrency.CustomCurrency;
 import me.theparanker.customcurrency.application.currency.CurrencyManager;
 import me.theparanker.customcurrency.core.domain.currency.Currency;
-import me.theparanker.customcurrency.plugin.command.strucutre.SubcommandExecutor;
+import me.theparanker.customcurrency.plugin.command.strucuture.SubcommandExecutor;
 import me.theparanker.utilslib.number.NumberUtil;
 import me.theparanker.utilslib.string.CC;
 import org.bukkit.Bukkit;

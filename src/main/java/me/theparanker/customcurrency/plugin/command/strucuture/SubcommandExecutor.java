@@ -1,4 +1,4 @@
-package me.theparanker.customcurrency.plugin.command.strucutre;
+package me.theparanker.customcurrency.plugin.command.strucuture;
 
 import me.theparanker.customcurrency.CustomCurrency;
 import me.theparanker.customcurrency.core.domain.currency.Currency;
