@@ -1,8 +1,11 @@
 name: CustomCurrency
 version: '1.0'
-main: dev.theparanker.customcurrency.plugin.bootstrap.CustomCurrencyPlugin
-api-version: '1.21'
+main: me.theparanker.customcurrency.plugin.bootstrap.CustomCurrencyPlugin
 authors: [ _theparanker_ ]
 libraries:
   - org.mariadb.jdbc:mariadb-java-client:3.5.5
   - com.zaxxer:HikariCP:7.0.2
+softdepend:
+  - Vault
+  - PlaceholderAPI
+loadbefore: [EconomyShopGUI]

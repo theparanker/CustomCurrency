@@ -8,6 +8,7 @@ apply plugin: 'java'
 
 def group = 'me.theparanker.customcurrency'
 def artifact = 'CustomCurrency'
+def version = '1.0.0'
 
 java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(21))
@@ -30,6 +31,7 @@ repositories {
     maven { url 'https://repo.codemc.io/repository/maven-releases/' }
     maven { url 'https://repo.codemc.io/repository/maven-snapshots/' }
     maven { url 'https://repo.extendedclip.com/releases/' }
+    maven { url "https://repo.flyte.gg/releases" }
     maven {
         url 'https://jitpack.io'
         credentials {
@@ -54,8 +56,12 @@ dependencies {
 
     compileOnly 'me.clip:placeholderapi:2.11.6'
 
+    compileOnly "com.github.MilkBowl:VaultAPI:1.7"
+
     implementation 'com.github.theparanker:utilslib:v1.1.0'
     implementation 'com.github.theparanker:manager-service:v1.0.1'
+
+    implementation "org.mclicense:library:1.4.7"
 }
 
 tasks {
@@ -65,19 +71,23 @@ tasks {
     }
 
     build {
-        dependsOn shadowJar
         dependsOn publish
+        dependsOn shadowJar
     }
 }
 
+jar.enabled = false
+
 shadowJar {
-    archiveFileName = artifact + '-1.0.0.jar'
-    minimize()
+    archiveFileName = "${artifact}-${version}.jar"
+    destinationDirectory = file("$buildDir/libs")
 }
 
-jar{
-    archiveFileName = artifact + '-1.0.0.jar'
+
+jar {
+    archiveFileName = "${artifact}-${version}.jar"
 }
+
 
 processResources {
     filteringCharset 'UTF-8'
