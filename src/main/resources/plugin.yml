@@ -1,5 +1,5 @@
 name: CustomCurrency
-version: '1.0'
+version: '1.1.0'
 main: me.theparanker.customcurrency.plugin.bootstrap.CustomCurrencyPlugin
 authors: [ _theparanker_ ]
 libraries:
@@ -8,4 +8,6 @@ libraries:
 softdepend:
   - Vault
   - PlaceholderAPI
-loadbefore: [EconomyShopGUI]
+commands:
+  pay:
+  balance:

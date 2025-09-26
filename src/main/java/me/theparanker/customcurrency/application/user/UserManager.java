@@ -7,13 +7,14 @@ import me.theparanker.customcurrency.core.domain.user.UserStructure;
 import me.theparanker.customcurrency.infra.persistance.MySQLManager;
 import lombok.Getter;
 import me.theparanker.managerservice.Manager;
+import me.theparanker.managerservice.ManagerAsync;
 
 import java.sql.*;
 import java.util.*;
 import java.util.concurrent.*;
 
 @Getter
-public class UserManager extends Manager<CustomCurrency> {
+public class UserManager extends ManagerAsync<CustomCurrency> {
 
     private final Map<UUID, UserStructure> users = new ConcurrentHashMap<>();
     private final Executor executor = Executors.newVirtualThreadPerTaskExecutor();

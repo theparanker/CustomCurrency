@@ -4,6 +4,7 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import me.theparanker.customcurrency.CustomCurrency;
 import me.theparanker.managerservice.Manager;
+import me.theparanker.managerservice.ManagerAsync;
 import org.bukkit.configuration.ConfigurationSection;
 import org.mariadb.jdbc.Configuration;
 import org.mariadb.jdbc.MariaDbDataSource;
@@ -13,7 +14,7 @@ import java.sql.SQLException;
 import java.util.concurrent.CompletableFuture;
 import java.util.logging.Level;
 
-public class MySQLManager extends Manager<CustomCurrency> {
+public class MySQLManager extends ManagerAsync<CustomCurrency> {
 
     private HikariDataSource dataSource;
     private final String host, database, user, password;

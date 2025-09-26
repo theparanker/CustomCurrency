@@ -3,6 +3,7 @@ package me.theparanker.customcurrency.plugin.command;
 import me.theparanker.customcurrency.CustomCurrency;
 import me.theparanker.customcurrency.application.currency.CurrencyManager;
 import me.theparanker.customcurrency.core.domain.currency.Currency;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -32,6 +33,10 @@ public class BaseCommand implements CommandExecutor, TabCompleter {
                 .orElse(null);
 
         if (currency != null) {
+            if (args.length == 0) {
+                sender.sendMessage("§cInvalid command usage.");
+                return true;
+            }
             var subCommands = currency.subCommands();
             if (subCommands.containsKey(args[0])) {
                 boolean permission = sender.hasPermission(subCommands.get(args[0]).permission()) || subCommands.get(args[0]).permission() == "";

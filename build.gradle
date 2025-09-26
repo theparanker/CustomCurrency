@@ -8,7 +8,7 @@ apply plugin: 'java'
 
 def group = 'me.theparanker.customcurrency'
 def artifact = 'CustomCurrency'
-def version = '1.0.0'
+def version = '1.1.0'
 
 java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(21))
@@ -36,7 +36,7 @@ repositories {
         url 'https://jitpack.io'
         credentials {
             username 'AUTH'
-            password project.findProperty("jitpack") ?: ""
+            password "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"
         }
     }
 }
@@ -58,8 +58,8 @@ dependencies {
 
     compileOnly "com.github.MilkBowl:VaultAPI:1.7"
 
-    implementation 'com.github.theparanker:utilslib:v1.1.0'
-    implementation 'com.github.theparanker:manager-service:v1.0.1'
+    implementation 'com.github.theparanker:utilslib:v1.2.4'
+    implementation 'com.github.theparanker:manager-service:v2.2.0'
 
     implementation "org.mclicense:library:1.4.7"
 }

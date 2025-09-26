@@ -34,6 +34,7 @@ public class CustomCurrency {
     private ConfigFile configFile, storageFile;
 
     private Currency vaultCurrency;
+    private Currency defaultCurrency;
 
     private boolean serviceStarted;
 
@@ -68,16 +69,18 @@ public class CustomCurrency {
     private void registerServices() {
         this.service = new ManagerService();
         this.service.init();
-        new ManagerServiceProvider(this.service);
+        new ManagerServiceProvider(this.logger, this.service, false);
 
         this.service.addManager(new MySQLManager(this));
         this.service.addManager(new CurrencyManager(this));
         this.service.addManager(new UserManager(this));
         this.service.addManager(new CommandsManager(this));
 
-        this.service.startAll().join();
+        this.service.startAll();
         this.serviceStarted = true;
+
         this.vaultCurrency = this.service.getManager(CurrencyManager.class).getCurrency(configFile.getString("vault-currency"));
+        this.defaultCurrency = this.service.getManager(CurrencyManager.class).getCurrency(configFile.getString("default-currency"));
     }
 
     private void registerListeners() {

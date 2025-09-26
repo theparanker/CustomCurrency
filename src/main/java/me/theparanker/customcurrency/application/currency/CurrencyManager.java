@@ -6,13 +6,14 @@ import me.theparanker.customcurrency.core.domain.currency.Currency;
 import me.theparanker.customcurrency.core.domain.user.UserStructure;
 import lombok.Getter;
 import me.theparanker.managerservice.Manager;
+import me.theparanker.managerservice.ManagerAsync;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;
 import java.util.concurrent.CompletableFuture;
 
-public class CurrencyManager extends Manager<CustomCurrency> {
+public class CurrencyManager extends ManagerAsync<CustomCurrency> {
 
     @Getter
     private HashMap<String, Currency> currencies;
