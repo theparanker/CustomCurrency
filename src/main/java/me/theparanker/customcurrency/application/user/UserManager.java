@@ -8,6 +8,7 @@ import me.theparanker.customcurrency.infra.persistance.MySQLManager;
 import lombok.Getter;
 import me.theparanker.managerservice.Manager;
 import me.theparanker.managerservice.ManagerAsync;
+import org.bukkit.Bukkit;
 
 import java.sql.*;
 import java.util.*;
@@ -76,12 +77,12 @@ public class UserManager extends ManagerAsync<CustomCurrency> {
                      PreparedStatement ps = conn.prepareStatement(sql)) {
 
                     ps.setString(1, uuid.toString());
-                    ResultSet rs = ps.executeQuery();
-
-                    if (rs.next()) {
-                        balances.put(currency, rs.getDouble("value"));
-                    } else {
-                        balances.put(currency, currency.setting().startingBalance());
+                    try (ResultSet rs = ps.executeQuery();) {
+                        if (rs.next()) {
+                            balances.put(currency, rs.getDouble("value"));
+                        } else {
+                            balances.put(currency, currency.setting().startingBalance());
+                        }
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -153,10 +154,10 @@ public class UserManager extends ManagerAsync<CustomCurrency> {
                  PreparedStatement ps = conn.prepareStatement(sql)) {
 
                 ps.setString(1, name);
-                ResultSet rs = ps.executeQuery();
-
-                if (rs.next()) {
-                    return rs.getDouble("value");
+                try (ResultSet rs = ps.executeQuery()) {
+                    if (rs.next()) {
+                        return rs.getDouble("value");
+                    }
                 }
             } catch (SQLException e) {
                 e.printStackTrace();

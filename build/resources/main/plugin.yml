@@ -8,6 +8,3 @@ libraries:
 softdepend:
   - Vault
   - PlaceholderAPI
-commands:
-  pay:
-  balance:
