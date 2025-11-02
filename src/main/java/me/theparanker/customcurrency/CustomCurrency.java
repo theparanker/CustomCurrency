@@ -17,7 +17,6 @@ import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.mclicense.library.MCLicense;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -44,11 +43,6 @@ public class CustomCurrency {
     }
 
     public void init() {
-        if (!MCLicense.validateKey(this.getPlugin(), "68bc5f9eb16cbcc298119969")) {
-            logger.severe("Invalid license key!");
-            Bukkit.getPluginManager().disablePlugin(this.getPlugin());
-            return;
-        }
         registerConfig();
         registerServices();
         registerListeners();

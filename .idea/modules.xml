@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/CustomCurrency.main.iml" filepath="$PROJECT_DIR$/.idea/modules/CustomCurrency.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/CustomCurrency.test.iml" filepath="$PROJECT_DIR$/.idea/modules/CustomCurrency.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Documents.CustomCurrency.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Documents.CustomCurrency.test.iml" />
     </modules>
   </component>
 </project>
